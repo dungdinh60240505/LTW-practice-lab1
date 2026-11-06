@@ -1,0 +1,16 @@
+.user-detail {
+  padding: 8px;
+}
+
+.user-detail-divider {
+  margin: 8px 0 16px 0 !important;
+}
+
+.user-detail-row {
+  margin-bottom: 8px !important;
+}
+
+.user-detail-button {
+  margin-top: 16px !important;
+}
+

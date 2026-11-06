@@ -1,0 +1,8 @@
+
+  .topbar-name {
+    flex-grow: 1;
+  }
+
+  .topbar-context {
+    margin-left: 16px !important;
+  }

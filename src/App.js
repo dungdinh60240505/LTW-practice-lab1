@@ -1,0 +1,75 @@
+import './App.css';
+
+import React, { useState } from "react";
+import { Grid, Typography, Paper } from "@mui/material";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
+import TopBar from "./components/TopBar";
+import UserDetail from "./components/UserDetail";
+import UserList from "./components/UserList";
+import UserPhotos from "./components/UserPhotos";
+
+const App = (props) => {
+  // "Advanced Features" (photo stepper) is always disabled on app startup.
+  const [advancedFeatures, setAdvancedFeatures] = useState(false);
+
+  return (
+      <Router>
+        <div>
+          <Grid container spacing={2}>
+            <Grid item xs={12}>
+              <TopBar
+                  advancedFeatures={advancedFeatures}
+                  setAdvancedFeatures={setAdvancedFeatures}
+              />
+            </Grid>
+            <div className="main-topbar-buffer" />
+            <Grid item sm={3}>
+              <Paper className="main-grid-item">
+                <UserList />
+              </Paper>
+            </Grid>
+            <Grid item sm={9}>
+              <Paper className="main-grid-item">
+                <Routes>
+                  <Route
+                      path="/users/:userId"
+                      element = {<UserDetail />}
+                  />
+                  <Route
+                      path="/photos/:userId"
+                      element = {(
+                          <UserPhotos
+                              advancedFeatures={advancedFeatures}
+                              setAdvancedFeatures={setAdvancedFeatures}
+                          />
+                      )}
+                  />
+                  <Route
+                      path="/photos/:userId/:photoId"
+                      element = {(
+                          <UserPhotos
+                              advancedFeatures={advancedFeatures}
+                              setAdvancedFeatures={setAdvancedFeatures}
+                          />
+                      )}
+                  />
+                  <Route path="/users" element={<UserList />} />
+                  <Route
+                      path="*"
+                      element={(
+                          <Typography variant="body1">
+                            Select a user from the list to see their details.
+                          </Typography>
+                      )}
+                  />
+                </Routes>
+              </Paper>
+            </Grid>
+          </Grid>
+        </div>
+      </Router>
+  );
+}
+
+export default App;
