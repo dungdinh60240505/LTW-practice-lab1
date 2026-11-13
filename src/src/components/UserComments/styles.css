@@ -1,0 +1,23 @@
+.user-comments-title {
+  margin-bottom: 12px !important;
+}
+
+.user-comment-card {
+  margin-bottom: 10px;
+}
+
+.user-comment-action {
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+}
+
+.user-comment-thumb {
+  width: 80px !important;
+  height: 80px;
+  object-fit: cover;
+  flex-shrink: 0;
+  margin: 8px;
+  border-radius: 4px;
+}
+

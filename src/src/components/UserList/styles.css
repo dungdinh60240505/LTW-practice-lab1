@@ -1,0 +1,24 @@
+.userlist-title {
+  padding: 0 16px;
+}
+
+.userlist-bubbles {
+  display: flex;
+  gap: 4px;
+  padding-right: 8px;
+}
+
+.userlist-bubble {
+  color: #fff !important;
+  font-weight: bold;
+  min-width: 28px;
+}
+
+.userlist-bubble-photos {
+  background-color: #2e7d32 !important;
+}
+
+.userlist-bubble-comments {
+  background-color: #d32f2f !important;
+  cursor: pointer;
+}
